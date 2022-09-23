@@ -1,3 +1,3 @@
-# TypeScript 101: Compiling
+# TypeScript 101: Setup
 
-`tsc <FILE.ts> -w`
+`sudo npm --location="global" typescript"`
