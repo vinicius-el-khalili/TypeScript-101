@@ -1,1 +1,3 @@
-#TypeScript 101
+#TypeScript 101: Compiling
+
+`tsc <FILE.ts> -w`: watch ts file
