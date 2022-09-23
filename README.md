@@ -1,1 +1,3 @@
-#TypeScript 101
+#TypeScript 101: Setup
+
+`sudo npm --location="global" typescript" : install typescript
