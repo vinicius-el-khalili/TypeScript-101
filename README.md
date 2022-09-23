@@ -1,3 +1,3 @@
-#TypeScript 101: Compiling
+# TypeScript 101: Compiling
 
 `tsc <FILE.ts> -w`
