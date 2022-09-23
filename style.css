@@ -1,6 +1,8 @@
 body{
     margin: 0;
-    font-family: Roboto; 
+    font-family: Roboto;
+    display: flex;
+    flex-direction: column;
   }
   .wrapper{
     max-width: 960px;
