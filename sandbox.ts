@@ -1,2 +1,4 @@
-const world = "world";
-console.log('hello, '+world);
+const f = (x:number)=>{
+    console.log(2*x)
+}
+f(1)
