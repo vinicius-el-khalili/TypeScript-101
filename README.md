@@ -1,9 +1,28 @@
-# TypeScript 101: Arrays and Objects
+# TypeScript 101: Explicit Types
 
-- Arrays are strictly typed if all of its initial values are of the same type.
-- `let l=[1,2,3]; l.push(true)` -> error
-- You can, however, have different types in an array if it is initially declared as so.
-- `let l=['A',2,false]; l.push(true)` -> ok
-- Object properties are strictly typed and its structure is fixed. New properties can not be added to the object on the run.
-- `let obj = {name:'john',age:30}; obj.name=0` -> error
-- `let obj = {name:'john',age:30}; obj.id=123` -> error
+- Explicit types
+```
+let character:string;
+let age:number;
+let isLoggedIn:boolean;
+```
+- Arrays
+```
+let names:string[]
+```
+
+- Union types
+```
+let id:string|number
+let mixed:(string|number)[]
+```
+
+- Objects
+```
+let obj1:object;
+let obj2:{
+    name:string,
+    age:number,
+    city:string
+}
+```
