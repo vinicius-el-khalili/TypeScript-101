@@ -1,6 +1,10 @@
-let f0:Function;
-const f1 = (a:number,b:number)=>{}
-const f2 = (a:number,b?:number)=>{}
-const f3 = (x:string="default")=>{}
-const f4 = (x:string):void=>{console.log(x)}
-const f5 = (x:string):string=>{return x}
+// Without type alias
+const greet = (user:{name:string,id:string|number})=>{
+    console.log(`${user} says hi`)
+}
+// With type alias
+type StrNum = string|number
+type userObj = {name:string, id:StrNum}
+const greetAgain = (user:userObj)=>{
+    console.log(`${user} says hi`)
+}

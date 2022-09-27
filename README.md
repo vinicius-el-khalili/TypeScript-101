@@ -1,23 +1,17 @@
-# TypeScript 101: Function Basics
+# TypeScript 101: Type Aliases
 
-- Declare
+- Use type alias to predefine union and object types and reduce repetitive code
+
 ```
-let f:Function;
-```
-- Variables
-```
-const f = (x:number,y:number)=>{}
-```
-- Default values
-```
-const f = (x:string="default")=>{}
-```
-- Optional variables
-```
-const f = (x?:string)=>{}
-```
-- Return type is inferred by tsc but you can also declare it
-```
-const f = (x:string):void=>{console.log(x)}
-const f = (x:string):string=>{return x}
+// Without type alias
+const greet = (user:{name:string,id:string|number})=>{
+    console.log(`${user} says hi`)
+}
+
+// With type alias
+type StrNum = string|number
+type userObj = {name:string, id:StrNum}
+const greetAgain = (user:userObj)=>{
+    console.log(`${user} says hi`)
+}
 ```
