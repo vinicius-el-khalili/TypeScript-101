@@ -1,14 +1,23 @@
-# TypeScript 101: Better Workflow & tsconfig
+# TypeScript 101: Function Basics
 
-- Initialize tsconfig
+- Declare
 ```
-tsc --init
+let f:Function;
 ```
-- Define roots in tsconfig
+- Variables
 ```
-"rootDir": "./src"
-"outDir": "./public"
-"include": ["src"] -> To compile only ts files inside the src folder
+const f = (x:number,y:number)=>{}
 ```
-- Compile
-`tsc -w`
+- Default values
+```
+const f = (x:string="default")=>{}
+```
+- Optional variables
+```
+const f = (x?:string)=>{}
+```
+- Return type is inferred by tsc but you can also declare it
+```
+const f = (x:string):void=>{console.log(x)}
+const f = (x:string):string=>{return x}
+```
