@@ -1,31 +1,21 @@
-# TypeScript 101: The DOM & Type Casting
+# TypeScript 101: Classes
 
-- error: Object is possibly 'null'
+- Declare
 ```
-const anchor = document.querySelector('a');
-console.log(anchor.href);
-```
-TypeScript doesn't have special access to the html files in the project.
-If TypeScript is not sure about the existence of a given element, it will raise an error.
-- Non-null assertion operator (!)
-```
-const anchor = document.querySelector('a')!;
-console.log(anchor.href);
-```
-- TypeScript uses special types for every DOM element
-```
-const element: HTMLAnchorElement|HTMLDivElement|...
-```
-- Each element type has a set of methods
-```
-console.log(anchor.href);
-```
-- Type casting
-```
-//    -> const type: Element | null
-const type1 = document.querySelector('#type');
-//    -> const type: HTMLSelectElement
-const type2 = document.querySelector('#type') as HTMLSelectElement;
-//    Now all the element type methods are available
-console.log(type.value);
+class SomeClass {
+    var1:string;
+    var2:string;
+    var3:number;
+    constructor(v1:string,v2:string,v3:number){
+        this.var1=v1;
+        this.var2=v2;
+        this.var3=v3;
+    }
+    get concatenate(){
+        return this.var1+this.var2
+    }
+    format(){
+        return `${this.var1}, ${this.var2}, ${this.var3}`
+    }
+}
 ```
