@@ -5,27 +5,22 @@
 const anchor = document.querySelector('a');
 console.log(anchor.href);
 ```
-TypeScript doesn't have special acess to the html files in the project.
+TypeScript doesn't have special access to the html files in the project.
 If TypeScript is not sure about the existence of a given element, it will raise an error.
-
-- Non-null assertion operator
+- Non-null assertion operator (!)
 ```
 const anchor = document.querySelector('a')!;
 console.log(anchor.href);
 ```
-The non-null assertion operator tells the TypeScript compiler that a value typed as optional cannot be null or undefined.
-
-- TypeScript automatically contains special types for every DOM element.
+- TypeScript uses special types for every DOM element
 ```
 const element: HTMLAnchorElement|HTMLDivElement|...
 ```
-Element types have specific methods for each given element.
+- Each element type has a set of methods
 ```
 console.log(anchor.href);
 ```
 - Type casting
-There are times when working with types where it's necessary to override the type of a variable, such as when incorrect types are provided by a library.
-Casting is the process of overriding a type.
 ```
 //    -> const type: Element | null
 const type1 = document.querySelector('#type');
