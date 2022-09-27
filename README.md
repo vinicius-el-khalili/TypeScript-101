@@ -1,5 +1,14 @@
-# TypeScript 101: Dynamic types
+# TypeScript 101: Better Workflow & tsconfig
+
+- Initialize tsconfig
 ```
-let variable:any;
-let mixed: any[];
+tsc --init
 ```
+- Define roots in tsconfig
+```
+"rootDir": "./src"
+"outDir": "./public"
+"include": ["src"] -> To compile only ts files inside the src folder
+```
+- Compile
+`tsc -w`
