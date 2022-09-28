@@ -1,24 +1,18 @@
-class SomeClass {
-    var1:string;
-    var2:string;
-    var3:number;
-    constructor(v1:string,v2:string,v3:number){
-        this.var1=v1;
-        this.var2=v2;
-        this.var3=v3;
-    }
-    get concatenate(){
-        return this.var1+this.var2
-    }
-    format(){
-        return `${this.var1}, ${this.var2}, ${this.var3}`
+class Invoice {
+    readonly client: string;    // readonly: variable can be read outside the class, but is unchangeable either outside or inside the class
+    private details: string;    // private: variable can't be read or changed outside the class
+    public amount: number;      // public: variable can be accessed and changed inside and outside the class (default)
+    constructor(c:string,d:string,a:number){
+        this.client=c;
+        this.details=d;
+        this.amount=a;
     }
 }
-// testing
-let classList: SomeClass[]=[]
-classList.push(new SomeClass('a','b',0))
-classList.push(new SomeClass('c','d',1))
-classList.push(new SomeClass('e','f',2))
-classList.forEach(c=>{
-    console.log(c.format(),c.concatenate)
-})
+// And THIS is how you declare a class in TypeScript
+class Invoice2{
+    constructor(
+        readonly client: string,
+        private details: string,
+        public amount: number
+    ){}
+}
