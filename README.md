@@ -1,30 +1,26 @@
-# TypeScript 101: Pubic, Private & Readonly
+# TypeScript 101: Modules
 
-- Access modifiers
-```
-class Invoice {
-    readonly client: string;
-    private details: string;
-    public amount: number;
-    constructor(c:string,d:string,a:number){
-        this.client=c;
-        this.details=d;
-        this.amount=a;
-    }
-}
-```
-- readonly: variable can be read outside the class, but is unchangeable either outside or inside the class
-- private: variable can't be read or changed outside the class
-- public: variable can be accessed and changed inside and outside the class (default)
+### Setup ES6 module system
 
-- Use access modifiers to declare attribute types in the constructor and declare classes the right way
+`tsconfig.json` -> "module": "ES6
+`<script type="module" src='app.js'></script>`
+
+### Using the module system
+
+- exporting:
 ```
-// And THIS is how you declare a class in TypeScript
-class Invoice2{
-    constructor(
-        readonly client: string,
-        private details: string,
-        public amount: number
-    ){}
-}
+export const zero : number = 0
+export {stuff};
+export {stuff as otherStuff};
+``` 
+- importing:
 ```
+import {zero} from "./filepath.js" // -> remember to extend it as .js
+import {zero as neutralNumber} from "./filepath.js"
+import * as myModule from "./filepath.js" 
+```
+
+### Drawbacks
+
+- Some browsers may not support ES6
+- It doesn't bundle your code, resulting in multiple requests that can overload the processing capacity
