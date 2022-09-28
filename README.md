@@ -1,26 +1,29 @@
-# TypeScript 101: Modules
+# TypeScript 101: Interfaces
 
-### Setup ES6 module system
+- Interface defines the syntax for classes to follow. Classes that are derived from an interface must follow the structure provided by their interface.
 
-`tsconfig.json` -> "module": "ES6
-`<script type="module" src='app.js'></script>`
+The TypeScript compiler does not convert interface to JavaScript. It uses interface for type checking. This is also known as "duck typing" or "structural subtyping".
 
-### Using the module system
-
-- exporting:
 ```
-export const zero : number = 0
-export {stuff};
-export {stuff as otherStuff};
-``` 
-- importing:
-```
-import {zero} from "./filepath.js" // -> remember to extend it as .js
-import {zero as neutralNumber} from "./filepath.js"
-import * as myModule from "./filepath.js" 
-```
+interface Person {
+    name:string;
+    age:number;
+    speak(a:string):void,
+    spend(a:number):number
+}
 
-### Drawbacks
+const I:Person = {
+    name:'bob',
+    age:32,
+    speak(text:string):void{
+        console.log(text)
+    },
+    spend(amount:number):number{
+        return amount
+    }
+}
 
-- Some browsers may not support ES6
-- It doesn't bundle your code, resulting in multiple requests that can overload the processing capacity
+const greet:Function = (person:Person) => {
+    console.log ("hello, ", person.name)
+}
+```

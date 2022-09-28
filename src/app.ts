@@ -1,4 +1,21 @@
-import {n,m} from './myModules/module1.js';
-import {i,j} from './myModules/module2.js';
-console.log(n,m);
-console.log(i,j);
+interface Person {
+    name:string;
+    age:number;
+    speak(a:string):void,
+    spend(a:number):number
+}
+
+const Bob:Person = {
+    name:'bob',
+    age:32,
+    speak(text:string):void{
+        console.log(text)
+    },
+    spend(amount:number):number{
+        return amount
+    }
+}
+
+const greet:Function = (person:Person) => {
+    console.log ("hello, ", person.name)
+}

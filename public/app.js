@@ -1,4 +1,14 @@
-import { n, m } from './myModules/module1.js';
-import { i, j } from './myModules/module2.js';
-console.log(n, m);
-console.log(i, j);
+"use strict";
+const Bob = {
+    name: 'bob',
+    age: 32,
+    speak(text) {
+        console.log(text);
+    },
+    spend(amount) {
+        return amount;
+    }
+};
+const greet = (person) => {
+    console.log("hello, ", person.name);
+};
