@@ -56,14 +56,3 @@ form.addEventListener("submit", (e) => {
     from.value = "";
     amount.value = "";
 });
-// tuples
-// Tuple: index structure
-let tuple;
-tuple = ["string", 0, false];
-tuple = ["stuff", 1, true];
-tuple = ["thing", 2, false];
-// Union types: no index structure
-let array;
-array = ["string", 0, false];
-array = [1, true, "stuff"];
-array = [false, "thing", 2];
