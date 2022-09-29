@@ -1,3 +1,6 @@
+*{
+  font-family: 'Courier New', Courier, monospace;
+}
 body{
     margin: 0;
     font-family: Roboto;
@@ -71,4 +74,13 @@ body{
     color: #999;
     margin-top: 40px;
     font-size: 0.7em;
+  }
+  #type{
+    background-color: white;
+  }
+  #tofrom{
+    background-color: white;
+  }
+  select{
+    background-color: red;
   }

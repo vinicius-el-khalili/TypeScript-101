@@ -8,7 +8,7 @@
 <body>
 
   <div class="wrapper">
-    <h1>TypeScript Sandbox</h1>
+    <h1>Iron Bank of Braavos</h1>
 
     <!-- output list -->
     <ul class="item-list">
@@ -18,28 +18,33 @@
 
   <footer>
     <form class="new-item-form">
+      
       <div class="field">
-        <label>Type:</label>
-        <select id="type">
-          <option value="invoice">Invoice</option>
-          <option value="payment">Payment</option>
+        <label>Type</label>
+        <select id="type" required>
+          <option value="Payment">Payment</option>
+          <option value="Loan">Loan</option>
         </select>
       </div>
+      
       <div class="field">
-        <label>To / From:</label>
-        <input type="text" id="tofrom">
+        <label>From/To</label>
+        <select id="tofrom" required>
+          <option value="House Stark">House Stark</option>
+          <option value="House Targaryen">House Targaryen</option>
+          <option value="House Lannister">House Lannister</option>
+          <option value="House Baratheon">House Baratheon</option>
+        </select>
       </div>   
-      <div class="field">
-        <label>Details:</label>
-        <input type="text" id="details">
-      </div>
+      
       <div class="field">
         <label>Amount</label>
         <input type="number" id="amount">
       </div>
+      
       <button>Add</button>
+
     </form>
-    <a href="google.com">anchor</a>
   </footer>
   <script type="module" src='app.js'></script>
 </body>
