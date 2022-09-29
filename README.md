@@ -1,3 +1,4 @@
+# TypeScript 101: Interfaces with classes
 - Declare interfaces
 ```
 interface HasAddition{
