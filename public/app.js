@@ -1,27 +1,58 @@
 "use strict";
-// Implement them to a class
-class Calculator {
-    add(x, y) {
-        return x + y;
+const form = document.querySelector('.new-item-form');
+const type = document.querySelector('#type');
+type.value = "";
+const from = document.querySelector('#tofrom');
+from.value = "";
+const amount = document.querySelector('#amount');
+// class Item
+class Item {
+    constructor(type, from, amount) {
+        this.type = type;
+        this.from = from;
+        this.amount = amount;
     }
-    sub(x, y) {
-        return x - y;
+    format() {
+        let msg;
+        switch (this.type) {
+            case "Payment":
+                msg = `${this.type} from ${this.from}: ${Math.abs(this.amount)} Gold`;
+                break;
+            case "Loan":
+                msg = `${this.type} to ${this.from}: ${Math.abs(this.amount)} Gold`;
+                break;
+            default:
+                msg = "";
+                break;
+        }
+        return msg;
     }
-    whatever() { }
 }
-let c;
-c = new Calculator();
-class NamedCalculator {
-    constructor(name) {
-        this.name = name;
+// class ListTemplate
+class ListTemplate {
+    constructor(container) {
+        this.container = container;
     }
-    add(x, y) {
-        return x + y;
+    render(item, heading, position) {
+        const li = document.createElement('li');
+        const h4 = document.createElement('h4');
+        h4.innerText = heading;
+        li.append(h4);
+        const p = document.createElement('p');
+        p.innerText = item.format();
+        li.append(p);
+        this.container.append(li);
     }
-    sub(x, y) {
-        return x - y;
-    }
-    whatever() { }
 }
-let nc;
-nc = new NamedCalculator('bob');
+// Handle form submission
+const ul = document.querySelector("ul");
+let l = new ListTemplate(ul);
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let item = new Item(type.value, from.value, amount.valueAsNumber);
+    l.render(item, item.type, 'start');
+    //
+    type.value = "";
+    from.value = "";
+    amount.value = "";
+});
