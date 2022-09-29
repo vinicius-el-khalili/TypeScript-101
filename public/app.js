@@ -56,3 +56,7 @@ form.addEventListener("submit", (e) => {
     from.value = "";
     amount.value = "";
 });
+// Generics
+const f = (obj) => { };
+const g = (obj) => { };
+const h = (obj) => { };

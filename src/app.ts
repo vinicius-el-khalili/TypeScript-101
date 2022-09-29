@@ -56,3 +56,8 @@ form.addEventListener("submit",(e:Event)=>{
     from.value=""
     amount.value=""
 })
+
+// Generics
+const f = (obj:any)=>{}
+const g = <T>(obj:T)=>{}
+const h = <T extends {name:string}>(obj:T)=>{}
