@@ -56,13 +56,3 @@ form.addEventListener("submit", (e) => {
     from.value = "";
     amount.value = "";
 });
-// Enums
-var ResourceType;
-(function (ResourceType) {
-    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
-    ResourceType[ResourceType["FILM"] = 1] = "FILM";
-    ResourceType["AUTHOR"] = "ok";
-})(ResourceType || (ResourceType = {}));
-console.log(ResourceType.BOOK); // -> 0
-console.log(ResourceType.FILM); // -> 1
-console.log(ResourceType.AUTHOR); // -> ok
