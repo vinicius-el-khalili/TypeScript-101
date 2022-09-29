@@ -1,21 +1,41 @@
-interface Person {
-    name:string;
-    age:number;
-    speak(a:string):void,
-    spend(a:number):number
+// Declare interfaces
+interface HasAddition{
+    add(x:number,y:number):number
 }
 
-const Bob:Person = {
-    name:'bob',
-    age:32,
-    speak(text:string):void{
-        console.log(text)
-    },
-    spend(amount:number):number{
-        return amount
+interface HasSubstraction{
+    sub(x:number,y:number):number
+}
+
+// Implement them to a class
+class Calculator implements HasAddition,HasSubstraction {
+    add(x: number, y: number): number {
+        return x+y
     }
+    sub(x: number, y: number): number {
+        return x-y
+    }
+    whatever():void{}
 }
 
-const greet:Function = (person:Person) => {
-    console.log ("hello, ", person.name)
+let c: Calculator
+c = new Calculator()
+
+// Combine them at a higher level
+interface HasName{
+    name:string
 }
+
+class NamedCalculator implements Calculator,HasName{
+    add(x: number, y: number): number {
+        return x+y
+    }
+    sub(x: number, y: number): number {
+        return x-y
+    }
+    constructor(public name:string){}
+    whatever(): void {}
+}
+
+let nc:NamedCalculator
+nc=new NamedCalculator('bob')

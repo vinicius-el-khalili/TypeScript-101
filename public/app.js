@@ -1,14 +1,27 @@
 "use strict";
-const Bob = {
-    name: 'bob',
-    age: 32,
-    speak(text) {
-        console.log(text);
-    },
-    spend(amount) {
-        return amount;
+// Implement them to a class
+class Calculator {
+    add(x, y) {
+        return x + y;
     }
-};
-const greet = (person) => {
-    console.log("hello, ", person.name);
-};
+    sub(x, y) {
+        return x - y;
+    }
+    whatever() { }
+}
+let c;
+c = new Calculator();
+class NamedCalculator {
+    constructor(name) {
+        this.name = name;
+    }
+    add(x, y) {
+        return x + y;
+    }
+    sub(x, y) {
+        return x - y;
+    }
+    whatever() { }
+}
+let nc;
+nc = new NamedCalculator('bob');
