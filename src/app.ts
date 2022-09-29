@@ -57,7 +57,8 @@ form.addEventListener("submit",(e:Event)=>{
     amount.value=""
 })
 
-// Generics
-const f = (obj:any)=>{}
-const g = <T>(obj:T)=>{}
-const h = <T extends {name:string}>(obj:T)=>{}
+// Enums
+enum ResourceType {BOOK,FILM,AUTHOR="ok"}
+console.log(ResourceType.BOOK)      // -> 0
+console.log(ResourceType.FILM)      // -> 1
+console.log(ResourceType.AUTHOR)    // -> ok

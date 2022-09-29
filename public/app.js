@@ -56,7 +56,13 @@ form.addEventListener("submit", (e) => {
     from.value = "";
     amount.value = "";
 });
-// Generics
-const f = (obj) => { };
-const g = (obj) => { };
-const h = (obj) => { };
+// Enums
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
+    ResourceType[ResourceType["FILM"] = 1] = "FILM";
+    ResourceType["AUTHOR"] = "ok";
+})(ResourceType || (ResourceType = {}));
+console.log(ResourceType.BOOK); // -> 0
+console.log(ResourceType.FILM); // -> 1
+console.log(ResourceType.AUTHOR); // -> ok
