@@ -56,4 +56,3 @@ form.addEventListener("submit",(e:Event)=>{
     from.value=""
     amount.value=""
 })
-
